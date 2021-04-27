@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -10,11 +10,7 @@ class CategoryController extends Controller
 
     public function index()
     {
-        //
-    }
-    public function create()
-    {
-        //
+        return [];
     }
 
     public function store(Request $request)
@@ -22,19 +18,11 @@ class CategoryController extends Controller
         //
     }
 
-   
     public function show(Category $category)
     {
         //
     }
 
-   
-    public function edit(Category $category)
-    {
-        //
-    }
-
-    
     public function update(Request $request, Category $category)
     {
         //
