@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['namespace' => 'api'], function() {
+    Route::resource('categories', 'CategoriesController', ['except' => ['create', 'edit']]);
+    Route::resource('genres', 'GenresController', ['except' => ['create', 'edit']]);
 });
