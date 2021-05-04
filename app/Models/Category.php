@@ -8,16 +8,12 @@ use Ramsey\Uuid\Uuid;
 
 class Category extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes, Traits\Uuid;
     protected $fillable = ['name', 'description', 'is_active'];
     protected $dates = ['deleted_at'];
-
-    public static function boot() 
-    {
-        parent::boot();
-        static::creating(function($obj){  
-            $obj->id = Uuid::uuid4(); 
-            $obj->teste = Uuid::uuid4(); 
-        });
-    }
+    protected $casts = [
+        'is_active' => 'boolean'
+    ];
+    protected $keyType = 'string';
+    public $incrementing = false;
 }
