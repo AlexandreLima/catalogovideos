@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['namespace' => 'api'], function() {
+Route::group(['namespace' => 'Api'], function() {
     Route::resource('categories', 'CategoriesController', ['except' => ['create', 'edit']]);
     Route::resource('genres', 'GenresController', ['except' => ['create', 'edit']]);
 });
