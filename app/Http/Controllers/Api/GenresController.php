@@ -19,22 +19,22 @@ class GenresController extends Controller
         return Genre::create($request->all());
     }
 
-    public function show(Genre $category)
+    public function show(Genre $genre)
     {
-       return $category;
+       return $genre;
     }
 
-    public function update(Request $request, Genre $category)
+    public function update(Request $request, Genre $genre)
     {
         $this->validate($request, $this->rules);
-        $category->update($request->all());
+        $genre->update($request->all());
 
-        return $category;
+        return $genre;
     }
  
-    public function destroy(Genre $category)
+    public function destroy(Genre $genre)
     {
-        $category->delete();
+        $genre->delete();
         return response()->noContent();
     }
 }

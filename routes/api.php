@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['namespace' => 'Api'], function() {
-    Route::resource('categories', 'CategoriesController', ['except' => ['create', 'edit']]);
-    Route::resource('genres', 'GenresController', ['except' => ['create', 'edit']]);
+    
+    $execeptCreateAndEdit = ['except' => ['create', 'edit']];
+
+    Route::resource('categories', 'CategoriesController', $execeptCreateAndEdit);
+    Route::resource('genres', 'GenresController', $execeptCreateAndEdit);
 });
+
